@@ -27,7 +27,7 @@ exports.for = function(API, plugin) {
 
         var parsedUri = URL.parse(uri);
 
-        if (!PATH.existsSync(parsedUri.pathname)) {
+        if (!API.FS.existsSync(parsedUri.pathname)) {
             return callback(null, {
                 status: 404,
                 cachePath: parsedUri.pathname
